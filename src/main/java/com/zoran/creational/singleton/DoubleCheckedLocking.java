@@ -1,7 +1,9 @@
-package com.zoran.Singleton;
+package com.zoran.creational.singleton;
+
+import java.io.Serializable;
 
 @SuppressWarnings("all")
-public class DoubleCheckedLocking {
+public class DoubleCheckedLocking implements Serializable {
     private DoubleCheckedLocking() {
     }
 
@@ -17,4 +19,9 @@ public class DoubleCheckedLocking {
         }
             return INSTANCE;
     }
+    // 当进行反序列化时，会自动调用该方法，并将该方法的返回值直接返回
+    public Object readResolve() {
+        return INSTANCE;
+    }
+
 }

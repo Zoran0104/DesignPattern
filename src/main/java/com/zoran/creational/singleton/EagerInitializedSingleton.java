@@ -1,4 +1,4 @@
-package com.zoran.Singleton;
+package com.zoran.creational.singleton;
 
 public class EagerInitializedSingleton {
 
